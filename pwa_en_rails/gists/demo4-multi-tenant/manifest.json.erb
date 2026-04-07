@@ -1,0 +1,17 @@
+<%# app/views/pwa/manifest.json.erb — personalizado por tenant %>
+{
+  "name": "<%= current_hospital&.name || 'Doctors App' %>",
+  "short_name": "<%= current_hospital&.name&.truncate(12) || 'Doctors' %>",
+  "icons": [
+    {
+      "src": "<%= current_hospital&.logo_url || '/icon.png' %>",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "<%= current_hospital&.theme_color || '#1e40af' %>",
+  "background_color": "#f3f4f6"
+}

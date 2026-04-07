@@ -1,0 +1,7 @@
+<%# app/views/layouts/_head.html.erb — agregar al final del <head>: %>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker")
+  }
+</script>
