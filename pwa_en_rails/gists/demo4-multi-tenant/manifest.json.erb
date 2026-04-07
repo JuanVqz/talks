@@ -1,0 +1,24 @@
+<%# app/views/pwa/manifest.json.erb -- personalizado por store %>
+{
+  "name": "<%= current_store&.name || 'May Store' %>",
+  "short_name": "<%= current_store&.name&.truncate(12) || 'MayStore' %>",
+  "icons": [
+    {
+      "src": "<%= current_store&.logo_url || '/icon.png' %>",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "<%= current_store&.logo_url || '/icon.png' %>",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "scope": "/",
+  "description": "MayStore.",
+  "theme_color": "#cc0000",
+  "background_color": "#cc0000"
+}
