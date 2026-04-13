@@ -1,8 +1,8 @@
 // PWA en Rails - Demo 2 | RubySur - 13/04/2026
 // app/views/pwa/service-worker.js
-const CACHE_NAME = "doctors-v1"
+const CACHE_NAME = "may-store-v1"
 
-// 1. Install: pre-cachear la página offline
+// 1. Install: pre-cachear la pagina offline
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -24,7 +24,7 @@ self.addEventListener("activate", (event) => {
   self.clients.claim()
 })
 
-// 3. Fetch: si falla una navegación → offline.html
+// 3. Fetch: si falla una navegacion, mostrar offline.html
 self.addEventListener("fetch", (event) => {
   if (event.request.mode === "navigate") {
     event.respondWith(

@@ -1,8 +1,8 @@
 // PWA en Rails - Demo 3 | RubySur - 13/04/2026
 // app/views/pwa/service-worker.js
-const CACHE_NAME = "doctors-v1"
+const CACHE_NAME = "may-store-v1"
 
-// 1. Install: pre-cachear la página offline
+// 1. Install: pre-cachear la pagina offline
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -28,7 +28,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url)
 
-  // Assets estáticos → Cache First (instantáneo)
+  // Assets estaticos: Cache First (instantaneo)
   if (url.pathname.match(/\.(css|js|png|jpg|svg|woff2)$/)) {
     event.respondWith(
       caches.match(event.request).then((cached) => {
@@ -44,7 +44,7 @@ self.addEventListener("fetch", (event) => {
     return
   }
 
-  // Navegación HTML → Network First con fallback offline
+  // Navegacion HTML: Network First con fallback offline
   if (event.request.mode === "navigate") {
     event.respondWith(
       fetch(event.request)

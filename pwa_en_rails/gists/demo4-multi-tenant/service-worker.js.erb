@@ -1,8 +1,9 @@
 // PWA en Rails - Demo 4 | RubySur - 13/04/2026
-// app/views/pwa/service-worker.js (es ERB!)
-// Cache nombrado por tenant para facilitar debugging
-const CACHE_NAME = "doctors-<%= current_hospital&.subdomain || 'public' %>-v1"
+// app/views/pwa/service-worker.js.erb
+// Cache nombrado por store para facilitar debugging
+const CACHE_NAME = "may-store-<%= current_store&.subdomain || 'public' %>-v1"
 
+// 1. Install: pre-cachear la pagina offline
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -11,6 +12,7 @@ self.addEventListener("install", (event) => {
   self.skipWaiting()
 })
 
+// 2. Activate: limpiar caches viejos
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((names) =>
@@ -23,9 +25,11 @@ self.addEventListener("activate", (event) => {
   self.clients.claim()
 })
 
+// 3. Fetch: estrategia mixta
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url)
 
+  // Assets estaticos: Cache First (instantaneo)
   if (url.pathname.match(/\.(css|js|png|jpg|svg|woff2)$/)) {
     event.respondWith(
       caches.match(event.request).then((cached) => {
@@ -41,6 +45,7 @@ self.addEventListener("fetch", (event) => {
     return
   }
 
+  // Navegacion HTML: Network First con fallback offline
   if (event.request.mode === "navigate") {
     event.respondWith(
       fetch(event.request)

@@ -6,6 +6,8 @@ Tu app Rails, instalable en cualquier dispositivo.
 
 Charla de 30-45 minutos para [RubySur](https://www.youtube.com/@rubysur), 13 de abril de 2026. Cubre cómo usar el soporte nativo de PWA en Rails (a partir de Rails 7.2) para hacer tu app instalable, con offline y estrategias de caché.
 
+**Video:** https://www.youtube.com/watch?v=ppxalpIKpGg
+
 **Evento:** [RubySur](https://www.youtube.com/@rubysur)
 
 **Fecha:** 13 de abril de 2026
@@ -18,14 +20,14 @@ Charla de 30-45 minutos para [RubySur](https://www.youtube.com/@rubysur), 13 de 
 
 ## Demos
 
-La charla incluye 4 demos progresivas sobre una app Rails real (gestión clínica):
+La charla incluye 4 demos progresivas sobre [may_store](https://github.com/JuanVqz/may_store):
 
-| Demo | Qué muestra | Gist |
-|------|-------------|------|
-| 1. App instalable | Manifest + rutas + meta tags | [TODO] |
-| 2. Service Worker básico | Página offline cuando no hay red | [TODO] |
-| 3. Cache inteligente | Cache First para assets, Network First para HTML | [TODO] |
-| 4. Multi-tenancy | Manifest y cache por tenant (subdominio) | [TODO] |
+| Demo | Qué muestra | Gist | PR |
+|------|-------------|------|----|
+| 1. App instalable | Manifest + rutas + meta tags | [gist](https://gist.github.com/JuanVqz/b812fe50ccef26cb1d62839056c95fcb) | [#31](https://github.com/JuanVqz/may_store/pull/31) |
+| 2. Service Worker básico | Página offline cuando no hay red | [gist](https://gist.github.com/JuanVqz/b434e873f73298024cd25223cee8a1be) | [#32](https://github.com/JuanVqz/may_store/pull/32) |
+| 3. Cache inteligente | Cache First para assets, Network First para HTML | [gist](https://gist.github.com/JuanVqz/045a5f54b0ace4ff7c34c8703ae80afe) | [#33](https://github.com/JuanVqz/may_store/pull/33) |
+| 4. Multi-tenancy | Manifest y cache por tenant (subdominio) | [gist](https://gist.github.com/JuanVqz/60f470c538fe16177e4e2d46ab47ea44) | [#34](https://github.com/JuanVqz/may_store/pull/34) |
 
 Los gists en la carpeta `gists/` contienen el código de cada demo.
 
