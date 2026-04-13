@@ -36,7 +36,7 @@ style: |
 <!-- Por cierto, son bienvenidos en el slack -->
 
 <!-- Saben que es PWA? -->
-<!-- Han convertido su app en PWA alguna ves? -->
+<!-- Han convertido su app en PWA alguna vez? -->
 
 <!-- Hoy veremos como con muy poco esfuerzo podemos hacer que nuestra Rails app se instale como si fuera nativa. -->
 
@@ -101,7 +101,7 @@ Tres pilares:
 |----------------------|----------------------------------------------------|-----------------------------|
 | **Web App Manifest** | JSON que describe la app (nombre, iconos, colores) | Si                          |
 | **Service Worker**   | Script que intercepta requests del navegador       | No, agrega superpoderes     |
-| **HTTPS**            | Conexión segura (requerido para service workers)   | No, Solo para Servive Worker|
+| **HTTPS**            | Conexión segura (requerido para service workers)   | Solo para Service Worker    |
 
 Solo con manifest ya podés hacer tu app **instalable**.
 
@@ -250,7 +250,7 @@ El manifest es **templates ERB**, no archivos estáticos:
 <!-- _class: lead -->
 # Demo 2: Página offline cuando no hay red
 
-- Agregar el service worker
+- Registro del service worker
 - La página offline
 - El Service Worker sirve la pagina offline
 
@@ -285,7 +285,7 @@ app/views/pwa/service-worker.js
 El ciclo de vida tiene 3 fases:
 Install: Hace pre-cache a la pagina `offline.html` para que este lista cuando el usuario no tenga internet.
 
-Activate: `clients.claim()` hace que el Service Worker tome el control immediatamente sin esperar que el usuario cierre y abra la app.
+Activate: `clients.claim()` hace que el Service Worker tome el control inmediatamente sin esperar que el usuario cierre y abra la app.
 
 Fetch: Aca es donde la pagina offline es llamada.
 
@@ -357,7 +357,7 @@ Remueve el registro en: DevTools > Application > Service Workers, click "Unregis
 # Demo 4: PWA + Multi-Store
 ## Cada tienda, su propia PWA
 
-<!-- DEMO 3: Esta es la parte mas copada para apps reales. -->
+<!-- DEMO 4: Esta es la parte mas copada para apps reales. -->
 
 ---
 
