@@ -43,7 +43,7 @@ PORT=3010 marp -p --server .
 
 ```
 pwa_en_rails/
-  pwa-en-rails.md                 # Slides (Marp)
+  index.md                        # Slides (Marp)
   gists/
     demo1-instalable/             # Manifest + rutas + meta tags
     demo2-service-worker-basico/  # SW + offline page
