@@ -571,11 +571,11 @@ end
 
 # Gracias!
 
-Video: `youtube.com/watch?v=ppxalpIKpGg`
-Slides: `github.com/JuanVqz/talks/pwa_en_rails`
-Codigo: `github.com/JuanVqz/may_store`
-Gists: `gist.github.com/JuanVqz`
+## RubySur - 13 de abril de 2026
 
-RubySur - 13 de abril de 2026
+- Slides: `github.com/JuanVqz/talks/pwa_en_rails`
+- PRs: `github.com/JuanVqz/may_store`
+- Gists:  `gist.github.com/JuanVqz`
+- Video:  `youtube.com/watch?v=ppxalpIKpGg`
 
 <!-- Gracias a los organizadores de RubySur! -->
